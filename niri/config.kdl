@@ -64,7 +64,7 @@ window-rule {
 
 binds {
     Mod+Shift+Numbersign { show-hotkey-overlay; }
-    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
@@ -109,9 +109,9 @@ binds {
     // Mod+Shift+K     { move-window-up-or-to-workspace-up; }
 
     Mod+Odiaeresis         { focus-column-first; }
-    Mod+Adiaresis          { focus-column-last; }
+    Mod+Adiaeresis          { focus-column-last; }
     Mod+Shift+Odiaeresis   { move-column-to-first; }
-    Mod+Shift+Adiaresis    { move-column-to-last; }
+    Mod+Shift+Adiaeresis    { move-column-to-last; }
 
     Mod+Comma         { focus-monitor-left; }
     Mod+Ctrl+Comma    { focus-monitor-down; }
