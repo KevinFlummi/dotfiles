@@ -27,11 +27,11 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter", 
     build = ":TSUpdate",
     config = function()
-	require("nvim-treesitter.configs").setup({
-  	ensure_installed = "all",
-  	highlight = { enable = true },
-  	indent = { enable = true },
-	})
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = "all",
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
     end
   },
 
@@ -62,9 +62,11 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({})
-      lspconfig.ts_ls.setup({})
+      -- Lua
+      vim.lsp.config["lua_ls"].setup({})
+  
+      -- TypeScript (tsserver is deprecated)
+      vim.lsp.config["ts_ls"].setup({})
     end,
   },
   {
