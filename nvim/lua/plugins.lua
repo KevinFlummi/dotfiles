@@ -26,6 +26,7 @@ require("lazy").setup({
   { 
     "nvim-treesitter/nvim-treesitter", 
     build = ":TSUpdate",
+    event = "BufReadPost",
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = "all",
@@ -62,11 +63,22 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     config = function()
-      -- Lua
-      vim.lsp.config["lua_ls"].setup({})
+      local lsp = vim.lsp
   
-      -- TypeScript (tsserver is deprecated)
-      vim.lsp.config["ts_ls"].setup({})
+      -- Lua
+      if lsp.config["lua_ls"] then
+        lsp.config["lua_ls"].setup({})
+      end
+  
+      -- TypeScript
+      if lsp.config["ts_ls"] then
+        lsp.config["ts_ls"].setup({})
+      end
+  
+      -- Python
+      if lsp.config["pyright"] then
+        lsp.config["pyright"].setup({})
+      end
     end,
   },
   {
