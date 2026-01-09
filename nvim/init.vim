@@ -34,7 +34,7 @@ set scrolloff=8
 """ Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-set mapleader = ","
+let mapleader=","
 nnoremap ü {
 nnoremap ä }
 vnoremap ü {
