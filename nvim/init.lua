@@ -17,7 +17,7 @@ set.wildmenu = true
 set.clipboard:append("unnamedplus")
 
 set.backspace="indent,eol,start"
-set scrolloff=8
+set.scrolloff=8
 
 -- tab behaviour
 set.expandtab = true
