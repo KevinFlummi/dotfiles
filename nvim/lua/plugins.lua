@@ -62,6 +62,7 @@ require("lazy").setup({
   -- LSP + completion
   {
     "neovim/nvim-lspconfig",
+    event = "BufReadPre",
     config = function()
       local lsp = vim.lsp
   
