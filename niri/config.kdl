@@ -13,7 +13,7 @@ input {
 }
 
 layout {
-    gaps 16
+    gaps 10
     center-focused-column "never"
 
     // "switch-preset-column-width" (Mod+R) toggles between.
@@ -26,9 +26,9 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        width 4
+        width 3
         inactive-color "#505050"
-        active-gradient from="#80c8ff" to="#c7ff7f" angle=45
+        active-gradient from="#f5c2e7" to="#f38ba8" angle=45
         urgent-color "#9b0000"
     }
 }
@@ -58,7 +58,7 @@ window-rule {
 
 // rounded corners
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 15
     clip-to-geometry true
 }
 
