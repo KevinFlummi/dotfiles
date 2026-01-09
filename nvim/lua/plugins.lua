@@ -12,9 +12,15 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
   -- Statusline
-  { "nvim-lualine/lualine.nvim" 
+  {
+    "nvim-lualine/lualine.nvim",
     config = function()
+      require("lualine").setup({
+        options = { theme = "auto" },
+      })
+    end,
   },
+
 
   -- Treesitter
   { 
