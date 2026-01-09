@@ -44,6 +44,80 @@ require("lazy").setup({
       require("telescope").setup({})
     end,
   },
+
+  -- Formatting
+{
+  "stevearc/conform.nvim",
+  opts = {
+    formatters_by_ft = {
+      -- Python
+      python = { "ruff_format" },
+
+      -- Nix
+      nix = { "alejandra" },
+
+      -- Shell
+      sh = { "shfmt" },
+      bash = { "shfmt" },
+
+      -- Lua
+      lua = { "stylua" },
+
+      -- JSON / JSONC
+      json = { "prettier" },
+      jsonc = { "prettier" },
+
+      -- YAML
+      yaml = { "prettier" },
+
+      -- TOML
+      toml = { "taplo" },
+
+      -- Markdown
+      markdown = { "prettier" },
+
+      -- HTML / XML
+      html = { "prettier" },
+      xml = { "tidy" },
+
+      -- JavaScript / TypeScript
+      javascript = { "prettier" },
+      typescript = { "prettier" },
+      javascriptreact = { "prettier" },
+      typescriptreact = { "prettier" },
+
+      -- Rust
+      rust = { "rustfmt" },
+
+      -- Go
+      go = { "gofmt" },
+
+      -- C / C++ / Java / ObjC
+      c = { "clang_format" },
+      cpp = { "clang_format" },
+      java = { "clang_format" },
+
+      -- Docker
+      dockerfile = { "dockfmt" },
+
+      -- Terraform / HCL
+      terraform = { "terraform_fmt" },
+      hcl = { "terraform_fmt" },
+
+      -- SQL
+      sql = { "sqlfluff", },
+
+      -- Protobuf
+      proto = { "buf" },
+    },
+
+    format_on_save = {
+      timeout_ms = 800,
+      lsp_fallback = true,
+    },
+  },
+}
+
 },
 { 
   lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
