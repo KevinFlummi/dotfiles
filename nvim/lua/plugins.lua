@@ -12,32 +12,81 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
   -- Statusline
-  { "nvim-lualine/lualine.nvim" },
+  { "nvim-lualine/lualine.nvim" 
+    config = function()
+  },
 
   -- Treesitter
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { 
+    "nvim-treesitter/nvim-treesitter", 
+    build = ":TSUpdate",
+    config = function()
+	require("nvim-treesitter.configs").setup({
+  	ensure_installed = "all",
+  	highlight = { enable = true },
+  	indent = { enable = true },
+	})
+    end
+  },
 
   -- Autopairs
-  { "windwp/nvim-autopairs" },
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup({})
+    end,
+  },
+
 
   -- Colorizer
-  { "NvChad/nvim-colorizer.lua" },
+  { 
+    "NvChad/nvim-colorizer.lua" 
+  },
 
   -- Telescope
-  { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("telescope").setup({})
+    end,
+  },
 
   -- LSP + completion
-  { "neovim/nvim-lspconfig" },
-  { "hrsh7th/nvim-cmp" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "L3MON4D3/LuaSnip" },
-  { lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json" },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require("lspconfig")
+      lspconfig.lua_ls.setup({})
+      lspconfig.ts_ls.setup({})
+    end,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "L3MON4D3/LuaSnip",
+    },
+    config = function()
+      local cmp = require("cmp")
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
+        sources = {
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+        },
+      })
+    end,
+  }
+},
+{ 
+  lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
 })
 
-require("config.autopairs")
-require("config.cmp")
-require("config.colorizer") 
-require("config.lsp")
-require("config.lualine")
-require("config.telescope")
-require("config.treesitter") 
