@@ -34,62 +34,6 @@ layout {
 }
 
 
-    Basic App Theming
-    Advanced App Theming
-        GTK and Qt Applications
-        VSCode
-        Discord
-        Firefox
-        Emacs
-        Zen Browser
-        Spotify
-
-    Basic App Theming
-    Advanced App Theming
-        GTK and Qt Applications
-        VSCode
-        Discord
-        Firefox
-        Emacs
-        Zen Browser
-        Spotify
-
-    Guidelines
-    IPC
-    Widgets
-    Color Scheme
-    Matugen
-        Overview
-        Getting Started
-        Manifest Reference
-        Bar Widget
-        Desktop Widget
-        Control Center Widget
-        Launcher Provider
-        Panel
-        Settings UI
-        Translations
-        IPC Communication
-        API Reference
-
-    Guidelines
-    IPC
-    Widgets
-    Color Scheme
-    Matugen
-        Overview
-        Getting Started
-        Manifest Reference
-        Bar Widget
-        Desktop Widget
-        Control Center Widget
-        Launcher Provider
-        Panel
-        Settings UI
-        Translations
-        IPC Communication
-        API Reference
-
 // Set the overview wallpaper on the backdrop.
 layer-rule {
   match namespace="^noctalia-overview*"
