@@ -1,7 +1,7 @@
 input {
     keyboard {
         xkb {
-	          layout "de"
+	    layout "de"
         }
         numlock
     }
@@ -183,7 +183,7 @@ binds {
     Mod+Ctrl+C  { center-visible-columns; }
 
     Mod+Less        { set-column-width "-5%"; }
-    Mod+Shift-Less  { set-column-width "+5%"; }
+    Mod+Shift+Less  { set-column-width "+5%"; }
 
     Mod+Ctrl+Less       { set-window-height "-10%"; }
     Mod+Ctrl+Shift+Less { set-window-height "+10%"; }
