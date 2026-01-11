@@ -13,23 +13,25 @@ input {
 }
 
 layout {
-    gaps 10
+    gaps 15
     center-focused-column "never"
+    always-center-single-column
+    empty-workspace-above-first
 
     // "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
-        proportion 0.33333
+        proportion 0.3
         proportion 0.5
-        proportion 0.66667
+        proportion 0.7
     }
 
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.7; }
 
     focus-ring {
-        width 3
-        inactive-color "#505050"
-        active-gradient from="#f9e2af" to="#b4befe" angle=45
-        urgent-color "#9b0000"
+        width 5
+        inactive-color "#585b70"
+        active-gradient from="#fab387" to="#cba6f7" angle=45 in="oklch shorter hue"
+        urgent-color "#d20f39"
     }
 }
 
@@ -41,6 +43,10 @@ layer-rule {
 }
 
 spawn-at-startup "noctalia-shell"
+
+spawn-at-startup "thunderbird"
+spawn-at-startup "keepassxc"
+spawn-at-startup "spotify"
 
 hotkey-overlay {
     skip-at-startup
@@ -60,12 +66,13 @@ window-rule {
 // block out password manager from screen capture /- means commented out
 /-window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     block-out-from "screen-capture"
 }
 
 // rounded corners
 window-rule {
-    geometry-corner-radius 15
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
