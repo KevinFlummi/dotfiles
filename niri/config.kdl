@@ -44,9 +44,9 @@ layer-rule {
 
 spawn-at-startup "noctalia-shell"
 
-spawn-at-startup "thunderbird"
-spawn-at-startup "keepassxc"
-spawn-at-startup "spotify"
+spawn-sh-at-startup "sleep 1 && keepassxc"
+spawn-sh-at-startup "sleep 2 && thunderbird"
+spawn-sh-at-startup "sleep 3 && spotify"
 
 hotkey-overlay {
     skip-at-startup
@@ -226,4 +226,8 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+}
+
+output "HDMI-A-1" {
+    scale "1.5"
 }
