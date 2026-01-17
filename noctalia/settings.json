@@ -438,7 +438,7 @@
     "fontFixed": "JetBrainsMono Nerd Font",
     "fontFixedScale": 1,
     "networkPanelView": "wifi",
-    "panelBackgroundOpacity": 0.75,
+    "panelBackgroundOpacity": 0.85,
     "panelsAttachedToBar": true,
     "settingsPanelMode": "attached",
     "tooltipsEnabled": true,
