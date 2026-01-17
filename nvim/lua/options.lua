@@ -6,6 +6,7 @@ local set = vim.opt
 -- basic
 set.title = true
 set.mouse = a
+set.background = "dark"
 set.cursorline = true
 set.hidden = true
 set.number = true
