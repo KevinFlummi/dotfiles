@@ -45,8 +45,8 @@ layer-rule {
 spawn-at-startup "noctalia-shell"
 
 spawn-sh-at-startup "sleep 1 && keepassxc"
-spawn-sh-at-startup "sleep 2 && thunderbird"
-spawn-sh-at-startup "sleep 3 && spotify"
+spawn-sh-at-startup "sleep 1 && thunderbird"
+spawn-sh-at-startup "sleep 1 && spotify"
 
 hotkey-overlay {
     skip-at-startup
