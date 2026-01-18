@@ -44,6 +44,9 @@ require("conform").setup({
 
 		-- Docker
 		dockerfile = { "dockfmt" },
+
+		-- LaTeX
+		tex = { "latexindent" },
 	},
 
 	format_on_save = {
