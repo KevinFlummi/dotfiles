@@ -3,21 +3,30 @@
 ---------------------------------------------------
 local set = vim.opt
 
--- basic
+-- set title of window to current file
 set.title = true
+
+-- enable mouse support
 set.mouse = a
-set.background = "dark"
-set.cursorline = true
-set.hidden = true
+
+-- line numbers
 set.number = true
 set.relativenumber = true
-set.wildmenu = true
-set.clipboard:append("unnamedplus")
 
-set.backspace = "indent,eol,start"
-set.scrolloff = 8
+-- appearance
+set.background = "dark"
+set.cursorline = true
+set.wrap = false
 set.signcolumn = "yes"
 set.colorcolumn = "80"
+
+set.scrolloff = 8
+
+-- search
+set.ignorecase = true
+set.smartcase = true
+set.incsearch = true
+set.hlsearch = true
 
 -- backups
 set.swapfile = false
