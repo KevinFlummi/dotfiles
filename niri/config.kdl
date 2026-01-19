@@ -1,3 +1,26 @@
+// workspace setup (todo: make good?)
+//workspace "work"
+//workspace "fun"
+//window-rule {
+//    match app-id="vesktop"
+//    match app-id="steam"
+//    open-on-workspace "fun"
+//}
+//workspace "aux"
+//window-rule {
+//    match app-id=r#"^com\.obsproject\.Studio$"#
+//    match app-id="Audactiy"
+//    match app-id="gimp"
+//    open-on-workspace "aux"
+//}
+//workspace "bg"
+//window-rule {
+//    match app-id="spotify"
+//    match app-id="thunderbird"
+//    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+//    open-on-workspace "bg"
+//}
+
 input {
     keyboard {
         xkb {
@@ -57,6 +80,7 @@ spawn-at-startup "noctalia-shell"
 spawn-sh-at-startup "sleep 3 && keepassxc"
 spawn-sh-at-startup "sleep 3 && thunderbird"
 spawn-sh-at-startup "sleep 3 && spotify"
+spawn-sh-at-startup "sleep 3 && nextcloud"
 
 hotkey-overlay {
     skip-at-startup
@@ -74,8 +98,7 @@ window-rule {
 }
 
 // block out password manager from screen capture /- means commented out
-/-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     block-out-from "screen-capture"
 }
