@@ -95,6 +95,12 @@
         },
         { "id": "Tray", "enableDrawer": true },
         {
+          "id": "screen-recorder",
+          "videoSource": "screen",
+          "quality": "medium",
+          "resolution": "1920x1080"
+        },
+        {
           "displayMode": "onhover",
           "id": "Volume"
         },
