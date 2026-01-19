@@ -93,6 +93,7 @@
           "useFixedWidth": false,
           "visualizerType": "linear"
         },
+        { "id": "Tray", "enableDrawer": true },
         {
           "displayMode": "onhover",
           "id": "Volume"
