@@ -3,6 +3,7 @@
 ---------------------------------------------------
 local map = vim.keymap.set
 
+vim.g.maplocalleader = ";"
 vim.g.mapleader = ","
 
 -- Remaps for german keyboard layout
