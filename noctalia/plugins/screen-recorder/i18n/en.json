@@ -56,6 +56,8 @@
       "quality-medium": "Medium",
       "quality-ultra": "Ultra",
       "quality-very-high": "Very high",
+      "replay-length": "Replay length",
+      "replay-length-desc": "Maximum length of the instant replay buffer. Set to 0 for regular recording.",
       "resolution": "Resolution",
       "resolution-desc": "Limit output resolution. Default uses original screen resolution",
       "resolution-original": "Default",

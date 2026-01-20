@@ -56,6 +56,7 @@ Item {
     // Settings shortcuts
     readonly property string directory: pluginApi?.pluginSettings?.directory || ""
     readonly property string filenamePattern: pluginApi?.pluginSettings?.filenamePattern || "recording_yyyyMMdd_HHmmss"
+    readonly property string replayLength: pluginApi?.pluginSettings?.replayLength || "0"
     readonly property string frameRate: pluginApi?.pluginSettings?.frameRate || "60"
     readonly property string audioCodec: pluginApi?.pluginSettings?.audioCodec || "opus"
     readonly property string videoCodec: pluginApi?.pluginSettings?.videoCodec || "h264"
@@ -217,7 +218,11 @@ Item {
         })()
 
         var resolutionFlag = (resolution !== "original") ? `-s ${resolution}` : ""
-        var flags = `-w ${videoSource} -f ${frameRate} -k ${videoCodec} ${audioFlags} -q ${quality} -cursor ${showCursor ? "yes" : "no"} -cr ${colorRange} ${resolutionFlag} -o "${outputPath}"`
+        if (replayLength === "0") {
+            var flags = `-w ${videoSource} -f ${frameRate} -k ${videoCodec} ${audioFlags} -q ${quality} -cursor ${showCursor ? "yes" : "no"} -cr ${colorRange} ${resolutionFlag} -o "${outputPath}"`
+        } else {
+            var flags = `-w ${videoSource} -f ${frameRate} -k ${videoCodec} ${audioFlags} -q ${quality} -cursor ${showCursor ? "yes" : "no"} -cr ${colorRange} ${resolutionFlag} -o "${videoDir}" -r ${replayLength} -c mp4`
+        }
         var command = `
     _gpuscreenrecorder_flatpak_installed() {
     flatpak list --app | grep -q "com.dec05eba.gpu_screen_recorder"
@@ -247,7 +252,7 @@ Item {
 
         ToastService.showNotice(pluginApi.tr("messages.stopping"), outputPath, "video")
 
-        Quickshell.execDetached(["sh", "-c", "pkill -SIGINT -f 'gpu-screen-recorder' || pkill -SIGINT -f 'com.dec05eba.gpu_screen_recorder'"])
+        Quickshell.execDetached(["sh", "-c", "pkill -SIGUSR1 -f gpu-screen-recorder; pkill -SIGINT -f 'gpu-screen-recorder' || pkill -SIGINT -f 'com.dec05eba.gpu_screen_recorder'"])
 
         isRecording = false
         isPending = false

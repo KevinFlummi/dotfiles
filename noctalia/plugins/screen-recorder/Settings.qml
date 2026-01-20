@@ -21,6 +21,11 @@ ColumnLayout {
         pluginApi?.manifest?.metadata?.defaultSettings?.filenamePattern || 
         "recording_yyyyMMdd_HHmmss"
 
+    property string editReplayLength: 
+        pluginApi?.pluginSettings?.replayLength || 
+        pluginApi?.manifest?.metadata?.defaultSettings?.replayLength || 
+        "0"
+
     property string editFrameRate: 
         pluginApi?.pluginSettings?.frameRate || 
         pluginApi?.manifest?.metadata?.defaultSettings?.frameRate || 
@@ -79,6 +84,7 @@ ColumnLayout {
 
         pluginApi.pluginSettings.directory = root.editDirectory
         pluginApi.pluginSettings.filenamePattern = root.editFilenamePattern
+        pluginApi.pluginSettings.replayLength = root.editReplayLength
         pluginApi.pluginSettings.frameRate = root.editFrameRate
         pluginApi.pluginSettings.audioCodec = root.editAudioCodec
         pluginApi.pluginSettings.videoCodec = root.editVideoCodec
@@ -113,6 +119,53 @@ ColumnLayout {
         text: root.editFilenamePattern
         onTextChanged: root.editFilenamePattern = text
         Layout.fillWidth: true
+    }
+    // Replay Length
+    ColumnLayout {
+        spacing: Style.marginL
+        Layout.fillWidth: true
+
+        NComboBox {
+            label: pluginApi.tr("settings.video.replay-length")
+            description: pluginApi.tr("settings.video.replay-length-desc")
+            model: [
+                {
+                    "key": "0",
+                    "name": "No limit"
+                },
+                {
+                    "key": "15",
+                    "name": "15 Seconds"
+                },
+                {
+                    "key": "30",
+                    "name": "30 Seconds"
+                },
+                {
+                    "key": "60",
+                    "name": "60 Seconds"
+                },
+                {
+                    "key": "90",
+                    "name": "90 Seconds"
+                },
+                {
+                    "key": "120",
+                    "name": "2 Minutes"
+                },
+                {
+                    "key": "300",
+                    "name": "5 Minutes"
+                },
+                {
+                    "key": "600",
+                    "name": "10 Minutes"
+                },
+            ]
+            currentKey: root.editReplayLength
+            onSelected: key => root.editReplayLength = key
+            defaultValue: pluginApi?.manifest?.metadata?.defaultSettings?.replayLength || "60"
+        }
     }
 
     NDivider {
@@ -164,7 +217,7 @@ ColumnLayout {
             onSelected: key => root.editVideoSource = key
             defaultValue: pluginApi?.manifest?.metadata?.defaultSettings?.videoSource || "portal"
         }
-
+        
         // Frame Rate
         NComboBox {
             label: pluginApi.tr("settings.video.frame-rate")
