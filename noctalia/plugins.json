@@ -7,6 +7,9 @@
         }
     ],
     "states": {
+      "screen-recorder": {
+            "enabled": true
+        }
     },
     "version": 1
 }
