@@ -16,7 +16,7 @@ set.relativenumber = true
 -- appearance
 set.background = "dark"
 set.cursorline = true
-set.wrap = false
+set.wrap = true
 set.signcolumn = "yes"
 set.colorcolumn = "80"
 
