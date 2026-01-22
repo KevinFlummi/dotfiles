@@ -42,6 +42,9 @@ require("conform").setup({
 		c = { "clang_format" },
 		cpp = { "clang_format" },
 
+		-- Haskell
+		haskell = { "ormolu" },
+
 		-- Docker
 		dockerfile = { "dockfmt" },
 
