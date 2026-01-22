@@ -1,30 +1,31 @@
-// workspace setup (todo: make good?)
-//workspace "work"
-//workspace "fun"
-//window-rule {
-//    match app-id="vesktop"
-//    match app-id="steam"
-//    open-on-workspace "fun"
-//}
-//workspace "aux"
-//window-rule {
-//    match app-id=r#"^com\.obsproject\.Studio$"#
-//    match app-id="Audactiy"
-//    match app-id="gimp"
-//    open-on-workspace "aux"
-//}
-//workspace "bg"
-//window-rule {
-//    match app-id="spotify"
-//    match app-id="thunderbird"
-//    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-//    open-on-workspace "bg"
-//}
+// workspace setup
+workspace "bg"
+window-rule {
+    match app-id="spotify"
+    match app-id="thunderbird"
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    open-on-workspace "bg"
+}
+workspace "aux"
+window-rule {
+    match app-id=r#"^com\.obsproject\.Studio$"#
+    match app-id="Audactiy"
+    match app-id="gimp"
+    open-on-workspace "aux"
+}
+workspace "fun"
+window-rule {
+    match app-id="vesktop"
+    match app-id="steam"
+    open-on-workspace "fun"
+}
+workspace "work"
 
 input {
     keyboard {
         xkb {
-	    layout "de"
+	        layout "de,us,mine"
+            options "grp:ctrl_space_toggle"
         }
         numlock
     }
@@ -39,7 +40,7 @@ layout {
     gaps 30
     center-focused-column "never"
     always-center-single-column
-    empty-workspace-above-first
+    //empty-workspace-above-first
 
     // "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
