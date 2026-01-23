@@ -63,9 +63,9 @@ layout {
 
     focus-ring {
         width 5
-        inactive-color "#585b70"
-        active-gradient from="#fab387" to="#cba6f7" angle=45 in="oklch shorter hue"
-        urgent-color "#d20f39"
+        inactive-color "#6e6a86"
+        active-gradient from="#ea9a97" to="#3e8fb0" angle=45 in="oklch shorter hue"
+        urgent-color "#eb6f92"
     }
 }
 
@@ -78,9 +78,9 @@ layer-rule {
 
 spawn-at-startup "noctalia-shell"
 
-spawn-sh-at-startup "sleep 3 && keepassxc"
-spawn-sh-at-startup "sleep 3 && thunderbird"
+spawn-sh-at-startup "sleep 1 && thunderbird"
 spawn-sh-at-startup "sleep 3 && spotify"
+spawn-sh-at-startup "sleep 5 && keepassxc"
 spawn-sh-at-startup "sleep 60 && nextcloud"
 
 hotkey-overlay {
