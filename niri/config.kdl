@@ -81,7 +81,7 @@ spawn-at-startup "noctalia-shell"
 spawn-sh-at-startup "sleep 3 && keepassxc"
 spawn-sh-at-startup "sleep 3 && thunderbird"
 spawn-sh-at-startup "sleep 3 && spotify"
-spawn-sh-at-startup "sleep 3 && nextcloud"
+spawn-sh-at-startup "sleep 60 && nextcloud"
 
 hotkey-overlay {
     skip-at-startup
