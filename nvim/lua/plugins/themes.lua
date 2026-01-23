@@ -9,7 +9,7 @@ require("rose-pine").setup({
 	disable_background = true,
 })
 
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("rose-pine-moon")
 
 -- transparent background
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

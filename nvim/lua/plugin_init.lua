@@ -1,6 +1,6 @@
 local function safe_require(mod)
-  local ok, _ = pcall(require, mod)
-  return ok
+	local ok, _ = pcall(require, mod)
+	return ok
 end
 
 safe_require("plugins.themes")
