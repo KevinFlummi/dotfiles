@@ -59,7 +59,7 @@ xkb_symbols "mine" {
 
     include "mine(mine_base)"
 
-    name[Group1]= "German (Mine)";
+    name[Group1]= "Mine";
 
     include "shift(both_capslock)"
     include "level3(caps_switch)"
