@@ -1,13 +1,22 @@
 require("blink.cmp").setup({
 	sources = {
 		default = { "copilot", "lsp", "path", "snippets", "buffer" },
+		--default = { "lsp", "path", "snippets", "buffer" },
+		providers = {
+			copilot = {
+				name = "copilot",
+				module = "blink-copilot",
+				score_offset = 100,
+				async = true,
+			},
+		},
 	},
 
 	keymap = {
 		-- Preset: Use no presets
 		preset = "default",
 		-- These are the defaults:
-		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+		["<C-h>"] = { "show", "show_documentation", "hide_documentation" },
 		["<C-e>"] = { "hide", "fallback" },
 		["<C-y>"] = { "select_and_accept", "fallback" },
 
