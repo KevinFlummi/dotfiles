@@ -37,22 +37,22 @@ input {
 }
 
 layout {
-    gaps 30
+    gaps 24
+    struts {
+        top -14
+    }
     center-focused-column "never"
     always-center-single-column
     //empty-workspace-above-first
 
     // "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
-        proportion 0.25
         proportion 0.33
         proportion 0.5
         proportion 0.67
-        proportion 0.75
-        proportion 1.0
     }
 
-    default-column-width { proportion 0.67; }
+    default-column-width { proportion 0.5; }
 
     preset-window-heights {
         proportion 0.33
@@ -62,7 +62,7 @@ layout {
     }
 
     focus-ring {
-        width 5
+        width 4
         inactive-color "#6e6a86"
         active-gradient from="#ea9a97" to="#9ccfd8" angle=0 in="oklch shorter hue"
         urgent-color "#eb6f92"
@@ -106,7 +106,7 @@ window-rule {
 
 // rounded corners
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 12
     clip-to-geometry true
 }
 
@@ -159,27 +159,27 @@ binds {
     // Mod+Shift+J     { move-window-down-or-to-workspace-down; }
     // Mod+Shift+K     { move-window-up-or-to-workspace-up; }
 
-    Mod+Odiaeresis         { focus-column-first; }
-    Mod+Adiaeresis          { focus-column-last; }
-    Mod+Shift+Odiaeresis   { move-column-to-first; }
-    Mod+Shift+Adiaeresis    { move-column-to-last; }
+    Mod+Odiaeresis       { focus-monitor-left; }    
+    Mod+Adiaeresis       { focus-monitor-down; }    
+    Mod+Shift+Odiaeresis { focus-monitor-up; }      
+    Mod+Shift+Adiaeresis { focus-monitor-right; }   
 
-    Mod+Comma         { focus-monitor-left; }
-    Mod+Ctrl+Comma    { focus-monitor-down; }
-    Mod+Period        { focus-monitor-up; }
-    Mod+Ctrl+Period   { focus-monitor-right; }
+    Mod+Ctrl+Odiaeresis       { move-column-to-monitor-left; }
+    Mod+Ctrl+Adiaeresis       { move-column-to-monitor-down; }
+    Mod+Ctrl+Shift+Odiaeresis { move-column-to-monitor-up; }
+    Mod+Ctrl+Shift+Adiaeresis { move-column-to-monitor-right; }
 
-    Mod+Shift+Comma       { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+Comma  { move-column-to-monitor-down; }
-    Mod+Shift+Period      { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+Period { move-column-to-monitor-right; }
+    Mod+Comma         { focus-column-first; }  
+    Mod+Period        { focus-column-last; }   
+    Mod+Shift+Comma    { move-column-to-first; }
+    Mod+Shift+Period   { move-column-to-last; } 
 
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
-    Mod+Shift+U        { move-column-to-workspace-down; }
-    Mod+Shift+I        { move-column-to-workspace-up; }
-    Mod+Shift+Ctrl+U   { move-workspace-down; }
-    Mod+Shift+Ctrl+I   { move-workspace-up; }
+    Mod+N              { focus-workspace-down; }
+    Mod+P              { focus-workspace-up; }
+    Mod+Shift+N        { move-column-to-workspace-down; }
+    Mod+Shift+P        { move-column-to-workspace-up; }
+    Mod+Shift+Ctrl+N   { move-workspace-down; }
+    Mod+Shift+Ctrl+P   { move-workspace-up; }
 
     Mod+WheelScrollDown       cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp         cooldown-ms=150 { focus-workspace-up; }
@@ -205,7 +205,6 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+0 { focus-workspace 10; }
     Mod+Shift+1 { move-column-to-workspace 1; }
     Mod+Shift+2 { move-column-to-workspace 2; }
     Mod+Shift+3 { move-column-to-workspace 3; }
@@ -215,7 +214,6 @@ binds {
     Mod+Shift+7 { move-column-to-workspace 7; }
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
-    Mod+Shift+0 { move-column-to-workspace 10; }
 
     Mod+Tab { focus-workspace-previous; }
 
@@ -262,7 +260,7 @@ binds {
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
+    //Mod+Shift+P { power-off-monitors; }
 }
 
 output "HDMI-A-1" {
