@@ -1,0 +1,17 @@
+Host ubupi
+    Hostname 192.168.8.102
+    User root
+
+Host server
+    Hostname k-corporation.org
+    User root
+
+Host github.com
+  AddKeysToAgent yes
+  #UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+
+Host deepl
+  Hostname login1.gbar.dtu.dk
+  User s242823
+  IdentityFile ~/.ssh/gbar
