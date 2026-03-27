@@ -64,8 +64,8 @@ xkb_symbols "mine" {
     include "shift(both_capslock)"
     include "level3(caps_switch)"
     include "mine(ac11_switch)"
-    include "level5(lsgt_switch_lock)"
-    include "level5(ralt_switch_lock)"
+    include "level5(lsgt_switch)"
+    include "level5(ralt_switch)"
 };
 
 // Bei einem Hochströmen sollte der nächste Abschnitt zu symbols/level3 hinzugefügt werden
@@ -78,4 +78,3 @@ xkb_symbols "ac11_switch" {
     symbols[Group1] = [ ISO_Level3_Shift ]
   };
 };
-
