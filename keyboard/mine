@@ -6,12 +6,12 @@ xkb_symbols "mine_base" {
     include "de(neo_base)"
 
 
-    key.type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE_LOCK";
+    key.type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE";
     key <AB08> { [ comma,                   endash,                  NoSymbol,                U03F1,                   NoSymbol,                NoSymbol,                U21D2,                   NoSymbol                 ] };
     key <AB09> { [ period,                  enfilledcircbullet,      NoSymbol,                U03D1,                   NoSymbol,                NoSymbol,                U21A6,                   NoSymbol                 ] };
 
 
-    key.type[Group1] = "EIGHT_LEVEL_ALPHABETIC_LEVEL_FIVE_LOCK";
+    key.type[Group1] = "EIGHT_LEVEL_ALPHABETIC_LEVEL_FIVE";
     key <AD01> { [ j,                       J,                       NoSymbol,                Greek_theta,             NoSymbol,                NoSymbol,                Greek_THETA,             NoSymbol                 ] };
     key <AD02> { [ l,                       L,                       NoSymbol,                Greek_lambda,            NoSymbol,                NoSymbol,                Greek_LAMBDA,            NoSymbol                 ] };
     key <AD03> { [ u,                       U,                       NoSymbol,                VoidSymbol,              NoSymbol,                NoSymbol,                includedin,              NoSymbol                 ] };
@@ -38,11 +38,11 @@ xkb_symbols "mine_base" {
     key <AC09> { [ s,                       S,                       NoSymbol,                Greek_sigma,             NoSymbol,                NoSymbol,                Greek_SIGMA,             NoSymbol                 ] };
     key <AC10> { [ h,                       H,                       NoSymbol,                Greek_psi,               NoSymbol,                NoSymbol,                Greek_PSI,               NoSymbol                 ] };
 
-    key.type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE_LOCK";
+    key.type[Group1] = "EIGHT_LEVEL_LEVEL_FIVE";
     // AC12 recieves symbols from neo AD12
     key <AC12> { [ dead_acute,              dead_tilde,              dead_stroke,             dead_psili,              dead_doubleacute,        NoSymbol,                dead_breve,              NoSymbol                 ] };
 
-    key.type[Group1] = "EIGHT_LEVEL_ALPHABETIC_LEVEL_FIVE_LOCK";
+    key.type[Group1] = "EIGHT_LEVEL_ALPHABETIC_LEVEL_FIVE";
     key <AB01> { [ v,                       V,                       NoSymbol,                VoidSymbol,              NoSymbol,                NoSymbol,                radical,                 NoSymbol                 ] };
     key <AB02> { [ x,                       X,                       NoSymbol,                Greek_xi,                NoSymbol,                NoSymbol,                Greek_XI,                NoSymbol                 ] };
     key <AB03> { [ udiaeresis,              Udiaeresis,              NoSymbol,                VoidSymbol,              NoSymbol,                NoSymbol,                union,                   NoSymbol                 ] };
